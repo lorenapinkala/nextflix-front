@@ -7,7 +7,7 @@ import useAxiosData from "../hooks/fetchData";
 const GenreCards = () => {
   const { genreName, id } = useParams();
 
-  const link = `http://localhost:3000/api/media/movie/genre/${id}`;
+  const link = `${import.meta.env.VITE_BASE_URL}/api/media/movie/genre/${id}`;
   const { data: movies, loading } = useAxiosData(link);
 
   useEffect(() => {}, [movies]);

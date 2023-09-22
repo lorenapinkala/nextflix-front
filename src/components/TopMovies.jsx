@@ -5,7 +5,7 @@ import useAxiosData from "../hooks/fetchData";
 import { FaFire} from 'react-icons/fa';
 
 const TopMovies = () => {
-  const link = "http://localhost:3000/api/media/movie/top";
+  const link = `${import.meta.env.VITE_BASE_URL}/api/media/movie/top`;
   const { data: movies, loading } = useAxiosData(link);
 
   useEffect(() => {

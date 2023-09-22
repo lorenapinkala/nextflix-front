@@ -7,7 +7,7 @@ import useAxiosData from "../hooks/fetchData";
 const Results = () => {
   const { search } = useParams();
 
-  const link = `http://localhost:3000/api/media/searchmovie/${search}`;
+  const link = `${import.meta.env.VITE_BASE_URL}/api/media/searchmovie/${search}`;
   const { data: movies, loading } = useAxiosData(link);
 
   useEffect(() => {}, [movies]);

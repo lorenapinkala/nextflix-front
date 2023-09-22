@@ -12,7 +12,7 @@ const Description = ({ user }) => {
 
   const fetchData = async () => {
     const { data } = await axios.get(
-      `http://localhost:3000/api/media/movie/description/${id}`
+      `${import.meta.env.VITE_BASE_URL}/api/media/movie/description/${id}`
     );
 
     setMovie(data);
@@ -38,7 +38,7 @@ const Description = ({ user }) => {
     if (!user) return alert("You need to log in");
 
     await axios
-      .post(`http://localhost:3000/api/users/add/${user._id}`, movie)
+      .post(`${import.meta.env.VITE_BASE_URL}/api/users/add/${user._id}`, movie)
       .then(() => setIsFavorite(true))
       .catch((error) => {
         console.error("Error adding to favorites:", error);

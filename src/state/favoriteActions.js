@@ -5,7 +5,7 @@ export const requestFavorite = (userId) => async (dispatch) => {
   try {
     
     const { data } = await axios.get(
-      `http://localhost:3000/api/users/favorite/${userId}`
+      `${import.meta.env.VITE_BASE_URL}/api/users/favorite/${userId}`
     );
 
     dispatch(getFavorites(data));

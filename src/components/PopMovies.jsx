@@ -5,7 +5,7 @@ import useAxiosData from "../hooks/fetchData";
 import { FaThumbsUp } from "react-icons/fa";
 
 const PopMovies = () => {
-  const link = "http://localhost:3000/api/media/movie/popular";
+  const link = `${import.meta.env.VITE_BASE_URL}/api/media/movie/popular`;
   const { data: movies, loading } = useAxiosData(link);
 
   useEffect(() => {}, [movies]);

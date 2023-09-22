@@ -3,7 +3,7 @@ import axios from "axios";
 
 export const loginUser = (credentials) => async (dispatch) => {
   try {
-    const url = "http://localhost:3000/api/auth/login";
+    const url = `${import.meta.env.VITE_BASE_URL}/api/auth/login`;
     const response = await axios.post(url, credentials);
 
     const { token } = response.data;
@@ -39,7 +39,7 @@ export const getUser = () => async (dispatch) => {
         },
       };
 
-      const response = await axios.get("http://localhost:3000/api/auth/me", config);
+      const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/auth/me`, config);
       const {data}= response;
 
       const user={payload:data, token}

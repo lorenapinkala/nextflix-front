@@ -18,7 +18,7 @@ const Signup = () => {
   const onSubmit = async(data) => {
   
     const { confirm, ...cleanedData } = data;
-    const url = "http://localhost:3000/api/auth/signup";
+    const url = `${import.meta.env.VITE_BASE_URL}/api/auth/signup`;
 
     try {
       const {data} = await axios.post(url, cleanedData);

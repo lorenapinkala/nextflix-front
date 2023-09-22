@@ -5,7 +5,7 @@ import useAxiosData from "../hooks/fetchData";
 import { FaCalendarAlt } from "react-icons/fa";
 
 const UpcomingMovies = () => {
-  const link = "http://localhost:3000/api/media/movie/upcoming";
+  const link = `${import.meta.env.VITE_BASE_URL}/api/media/movie/upcoming`;
   const { data: movies, loading } = useAxiosData(link);
 
   useEffect(() => {}, [movies]);

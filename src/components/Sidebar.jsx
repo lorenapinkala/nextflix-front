@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   const fetchData = async () => {
 
-    const { data } = await axios.get('http://localhost:3000/api/media/genre');
+    const { data } = await axios.get(`${import.meta.env.VITE_BASE_URL}/api/media/genre`);
 
     if (Array.isArray(data)) {
       setGenres(data);
