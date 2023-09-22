@@ -1,6 +1,10 @@
 # NextFlix Frontend
 
 This project is the frontend of  **NextFlix **,  an application that allows users to view popular movies, top-rated movies, and upcoming movies. Users can also search for movies and save them to a favorites list.
+
+[![nextflix-app.png](https://i.postimg.cc/6q763WGn/nextflix-app.png)](https://postimg.cc/jnbY3rcS)
+
+
 Installation
 
 
