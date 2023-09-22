@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+.scale-105 {
+    transform: scale(1.15);
+    transition-duration: 0.2s;
+  }
+  
+  .scale-100 {
+    transform: scale(1.05);
+    transition-duration: 0.2s;
+  }
