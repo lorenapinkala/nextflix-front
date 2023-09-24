@@ -30,8 +30,8 @@ function App() {
   }, [user, dispatch]);
 
   return (
-    <>
-      <div className="h-full w-full bg-orange-400">
+    
+      <div className="h-screen w-full bg-red-500">
         <Navbar user={user} />
         <div className="flex bg-zinc-600  min-h-screen w-full">
           <Sidebar/>
@@ -39,7 +39,7 @@ function App() {
         </div>
         <Footer />
       </div>
-    </>
+    
   );
 }
 

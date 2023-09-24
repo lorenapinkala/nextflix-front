@@ -49,44 +49,48 @@ const Navbar = ({ user }) => {
   }, [location.pathname]);
 
   return (
-    <nav className="bg-slate-800 shadow-2xl w-full h-20 flex  items-center justify-between">
-      <Link to="/" className=" ml-5">
-        <h1 className="font-bold text-slate-300 text-6xl">NextFlix!</h1>
+    <nav className="bg-slate-800 shadow-2xl w-full h-20 flex items-center md:justify-between ">
+      <Link to="/" className="max-sm:w-3/12 max-sm:h-5">
+        <h1 className="font-bold text-slate-300 sm:text-3xl md:text-6xl">
+          NextFlix!
+        </h1>
       </Link>
 
-      <div className="w-1/3 mx-12 flex ">
+      <div className="w-7/12 h-12 flex justify-center items-center">
         <input
-          onChange={handleSelect}
-          value={search}
-          type="text"
-          className="mt-2 bg-slate-800 border-gray-500 border-2 p-2 text-white h-11 w-full rounded"
-        />
-
+        onChange={handleSelect}
+        value={search}
+        type="text"
+        className="bg-slate-800 border-gray-500 border-2 p-2 text-gray rounded max-sm:h-6 sm:h-7 w-2/3 h-11"/>
         <Link to={`/results/${search}`}>
-          <button
-            onClick={clearInput}
-            className="ml-3 mt-1 shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white text-lg py-1 px-8 rounded h-12"
-          >
-            Search
-          </button>
+        <button  onClick={clearInput} type="button" className="ml-5 shadow bg-indigo-800 hover:bg-indigo-700 focus:shadow-outline focus:outline-none text-white max-sm:h-6 max-sm:w-12 max-sm:text-sm sm:h-7 rounded w-14 h-10">Search</button>
         </Link>
       </div>
 
       {!user ? (
-        <div className="relative" ref={menuRef}>
+        <div
+          className="max-sm:w-2/12 max-sm:h-5 sm:w-2/12 sm:h-6 md:w-2/12 md:h-6 flex justify-center items-center"
+          ref={menuRef}
+        >
           <TbLogout
+            className="text-white sm:text-3xl md:text-4xl lg:text-4xl"
             onClick={toggleMenu}
-            className="mr-12 text-white w-12 h-12"
           />
           {isOpen && (
-            <ul className="absolute mt-2 space-y-2 bg-white border rounded-lg shadow-lg">
-              <li>
-                <Link to="/login" className="block px-4 py-2 text-gray-700">
+            <ul className="absolute mt-7 space-y-2 bg-white border rounded-lg max-sm:w-13 max-sm:h-15">
+              <li className="flex justify-center items-center  max-sm:h-1/2 hover:bg-gray-400">
+                <Link
+                  to="/login"
+                  className="block  text-gray-700 max-sm:text-sm "
+                >
                   Log in!
                 </Link>
               </li>
-              <li>
-                <Link to="/signup" className="block px-4 py-2 text-gray-700">
+              <li className="flex justify-center items-center max-sm:h-1/2 hover:bg-gray-400">
+                <Link
+                  to="/signup"
+                  className="block  text-gray-700 max-sm:text-sm"
+                >
                   Sign up
                 </Link>
               </li>
@@ -94,28 +98,28 @@ const Navbar = ({ user }) => {
           )}
         </div>
       ) : (
-        <div className="flex items-center relative" ref={menuRef}>
-          <p className="text-white text-xl">Hi, {user.username}!</p>
-          <div>
-            <button onClick={toggleMenu} type="button">
-              <SiAseprite className="ml-7 mr-7 text-white w-12 h-12" />
-            </button>
-            {isOpen && (
-              <ul className="absolute mt-2 space-y-2 bg-white border rounded-lg shadow-lg">
-                <li>
-                  <div className=" hover:bg-gray-400 block px-4 py-2 text-gray-700">
-                    <button
-                      className="w-full h-full"
-                      onClick={handleLogOut}
-                      type="button"
-                    >
-                      Log out!
-                    </button>
-                  </div>
-                </li>
-              </ul>
-            )}
-          </div>
+        <div
+          className="max-sm:ml-3 max-sm:w-2/12 max-sm:h-5 sm:w-2/12 sm:h-6 md:w-2/12 md:h-6 flex justify-center items-center"
+          ref={menuRef} 
+        >
+           <p className="text-white text-xl max-sm:text-xs">Hi, {user.username}!</p>
+          <SiAseprite
+            className="text-white sm:text-3xl md:text-4xl lg:text-4xl"
+            onClick={toggleMenu}
+          />
+          {isOpen && (
+            <ul className="absolute mt-7 space-y-2 bg-white border rounded-lg max-sm:w-13 max-sm:h-15">
+              <li className="flex justify-center items-center max-sm:bg-red-400 max-sm:h-1/2 hover:bg-gray-400 ">
+                <button
+                  onClick={handleLogOut}
+                  type="button"
+                  className="text-gray-700 max-sm:text-sm "
+                >
+                  Log out
+                </button>
+              </li>
+            </ul>
+          )}
         </div>
       )}
     </nav>
