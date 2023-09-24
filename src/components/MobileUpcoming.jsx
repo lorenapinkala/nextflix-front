@@ -23,7 +23,6 @@ const MobileUpcoming = () => {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 mt-2">
         {movies.map((item) => (
           <Link to={`description/${item.id}`} key={item.id} className="w-full">
-            {/* Agregar clases para centrar las cards */}
             <div className="flex justify-center items-center">
               <Card item={item} />
             </div>
